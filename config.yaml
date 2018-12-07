@@ -1,0 +1,45 @@
+# Параметры запуска
+#===================================
+train: False # Обучить модель
+predict: False # создать новые предсказания или использовать существующие
+use_id: "2018-05-19_15.00.10"
+
+
+batch_size: 70
+
+
+window_size: 30
+
+header: ["run_id", "chan_id", "spacecraft", "num_anoms", "anomaly_sequences", "class", "true_positives", 
+        "false_positives", "false_negatives", "tp_sequences", "fp_sequences", "gaussian_p-value", "num_values",
+        "normalized_error", "eval_time", "scores"]
+
+
+smoothing_perc: 0.05
+
+
+error_buffer: 100
+
+# Параметры LSTM
+# ==================================
+loss_metric: 'mse'
+optimizer: 'adam'
+validation_split: 0.2
+dropout: 0.3
+lstm_batch_size: 64
+
+
+epochs: 35
+
+layers: [80,80]
+
+patience: 10
+min_delta: 0.0003
+
+
+l_s: 250
+
+
+n_predictions: 10
+
+p: 0.13
